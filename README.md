@@ -187,6 +187,8 @@ messenger.send_template("hello_world", "255757xxxxxx")
 
 ## Webhook
 
+**Note:** I am having issues with my phone number so I havent tested this functionality fully. Consider it experimental 🧪
+
 Webhooks are useful incase you're wondering how to respond to incoming message send by user, but I have created a [starter webhook](https://github.com/JS-Hub-ZW/heyhooh/blob/main/hook.ts) which you can then customize it according to your own plans.
 
 To learn more about webhook and how to configure in your Facebook developer dashboard please [have a look here](https://developers.facebook.com/docs/whatsapp/cloud-api/guides/set-up-webhooks).
