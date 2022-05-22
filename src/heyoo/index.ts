@@ -100,7 +100,7 @@ export default class WhatsApp{
         return r
     }
 
-    async send_audio(self: any, audio: any, recipient_id: any, link=true){
+    async send_audio( audio: any, recipient_id: any, link=true){
         let data    
         if (link){
             data = {

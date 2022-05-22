@@ -3,8 +3,8 @@
 # [heyoo](https://pypi.org/project/heyoo/)
 
 [![Ported in Zimbabwe🇿🇼](https://img.shields.io/badge/ported%20in-zimbabwe%20%F0%9F%87%BF%F0%9F%87%BC-blue)](https://github.com/JS-Hub-ZW)
-[![Downloads](https://img.shields.io/npm/dy/heyoojs)](https://img.shields.io/npm/dy/heyoojs)
-[![Downloads](https://img.shields.io/npm/dm/heyoojs)](https://img.shields.io/npm/dm/heyoojs)
+![NPM](https://img.shields.io/npm/l/heyoojs)
+[![Downloads](https://img.shields.io/npm/dy/heyoojs)](https://img.shields.io/npm/dw/heyoojs)
 [![Downloads](https://img.shields.io/npm/dw/heyoojs)](https://img.shields.io/npm/dw/heyoojs)
 
 Unofficial javascript wrapper to [WhatsApp Cloud API](https://developers.facebook.com/docs/whatsapp/cloud-api). Its the javascript port for [heyoo](https://github.com/Neurotech-HQ/heyoo)

@@ -5,7 +5,7 @@ import WhatsApp from './heyoo'
 
 
 const app = express()
-const port = 3000
+const port = process.env.LISTEN_PORT
 
 
 // Middleware 

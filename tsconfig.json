@@ -1,6 +1,17 @@
 {
-  "extends": "@tsconfig/node16/tsconfig.json",
-  "compilerOptions": {},
-  "include": ["src"],
+  "ts-node": {
+    // these options are overrides used only by ts-node
+    "compilerOptions": {
+      "target": "es6",
+    "module": "commonjs",
+    "esModuleInterop": true,
+    }
+  },
+  "compilerOptions": {
+    "target": "es6",
+    "module": "commonjs",
+    "esModuleInterop": true,
+  },
+  "include": ["src/**/*"],
   "exclude": ["node_modules"]
 }

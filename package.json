@@ -4,15 +4,24 @@
   "description": "heyoojs is a javascript port of heyoo(made in python). Heyoo is a python wrapper for the Whatsapp Cloud API",
   "main": "index.js",
   "scripts": {
-    "dev": "ts-node-dev --exit-child src/index.ts",
-    "start": "ts-node src/index.ts"
+    "dev": "ts-node-dev --exit-child test.ts",
+    "start": "ts-node test.ts",
+    "test": "jest"
   },
-  "keywords": ["api", "typescript", "api-wrapper", "whatsapp-cloud-api"],
+  "keywords": [
+    "api",
+    "typescript",
+    "api-wrapper",
+    "whatsapp-cloud-api"
+  ],
   "author": "JS-Hub-ZW",
   "license": "MIT",
   "devDependencies": {
     "@types/express": "^4.17.13",
+    "@types/jest": "^27.5.1",
     "@types/node": "^17.0.35",
+    "jest": "^28.1.0",
+    "ts-jest": "^28.0.2",
     "ts-node": "^10.8.0",
     "ts-node-dev": "^1.1.8",
     "typescript": "^4.6.4"
