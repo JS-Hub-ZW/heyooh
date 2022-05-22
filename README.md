@@ -3,7 +3,8 @@
 # [heyooh](https://pypi.org/project/heyoo/)
 
 [![Ported in Zimbabwe🇿🇼](https://img.shields.io/badge/ported%20in-zimbabwe%20%F0%9F%87%BF%F0%9F%87%BC-blue)](https://github.com/JS-Hub-ZW)
-![NPM](https://img.shields.io/npm/l/heyhooh)
+![NPM](https://img.shields.io/npm/l/heyooh)
+![npm](https://img.shields.io/npm/v/heyooh)
 [![Downloads](https://img.shields.io/npm/dy/heyhooh)](https://img.shields.io/npm/dw/heyooh)
 [![Downloads](https://img.shields.io/npm/dw/heyhooh)](https://img.shields.io/npm/dw/heyooh)
 
@@ -189,6 +190,39 @@ messenger.send_template("hello_world", "255757xxxxxx")
 Webhooks are useful incase you're wondering how to respond to incoming message send by user, but I have created a [starter webhook](https://github.com/JS-Hub-ZW/heyhooh/blob/main/hook.ts) which you can then customize it according to your own plans.
 
 To learn more about webhook and how to configure in your Facebook developer dashboard please [have a look here](https://developers.facebook.com/docs/whatsapp/cloud-api/guides/set-up-webhooks).
+
+
+### Notification Payload Processor
+
+Given notification data you can process it like this:
+
+```javascript
+let data = req.body
+let processedPayload = new ProcessNotificationPayload(data)
+```
+
+This is will help you identify things like the type of payload and has some getter functions for simplifying your work:
+
+```javascript
+let messages = processedPayload.get_messages()
+let metadata = processedPayload.get_contacts()
+let contacts = processedPayload.get_contacts()
+```
+
+Of the helpers are not exhaustive since this is wrapper.
+
+### Getting media links  [To be implented]
+
+To retrive actual media links
+
+```javascript
+let message = processedPayload.get_messages()[0]
+let mediaData = await  processedPayload.getMediaData(message.image.id)
+```
+
+**NOTE:** The URL you get is only available for a 5 minutes, so you may need to download it and store it somewhere, or use it as quick as possible
+
+For more info check [Notification Payload refernce](https://developers.facebook.com/docs/whatsapp/cloud-api/webhooks/components) and [Notification Payload Examples](https://developers.facebook.com/docs/whatsapp/cloud-api/webhooks/payload-examples)
 
 ## Issues
 
