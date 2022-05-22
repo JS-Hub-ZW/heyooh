@@ -187,11 +187,53 @@ messenger.send_template("hello_world", "255757xxxxxx")
 
 ## Webhook
 
-**Note:** I am having issues with my phone number so I havent tested this functionality fully. Consider it experimental 🧪. If you decide proceeding, you might end up contributing (Which is a good thing)
-
-Webhooks are useful incase you're wondering how to respond to incoming message send by user, but I have created a [starter webhook](https://github.com/JS-Hub-ZW/heyhooh/blob/main/hook.ts) which you can then customize it according to your own plans. In the moment I have made it as simple as possible.
+Webhooks helps you recieve notifications when certain events are triggered. These notifications are useful incase you're wondering how to respond to incoming message send by user, but I have created a [starter webhook](https://github.com/JS-Hub-ZW/heyhooh/blob/main/hook.ts) which you can then customize it according to your own plans. In the moment I have made it as simple as possible.
 
 To learn more about webhook and how to configure in your Facebook developer dashboard please [have a look here](https://developers.facebook.com/docs/whatsapp/cloud-api/guides/set-up-webhooks).
+
+### Notification Payload Structure
+
+This is the structure of the notifications that you will recieve from Whatsapp when a certain event is triggered
+
+
+<table>
+<tr>
+<td> Example Notification Payload </td> <td> Nested Structure of the Payload </td>
+</tr>
+<tr>
+<td>
+
+```bash
+{
+  "object": "whatsapp_business_account",
+  "entry": [{
+    "id": "WHATSAPP-BUSINESS-ACCOUNT-ID",
+    "changes": [{
+      "value": {
+         "messaging_product": "whatsapp",
+         "metadata": {
+           "display_phone_number": "PHONE-NUMBER",
+           "phone_number_id": "PHONE-NUMBER-ID"
+         },
+      # Additional arrays and objects
+         "contacts": [{...}]
+         "errors": [{...}]
+         "messages": [{...}]
+         "statuses": [{...}]
+      },
+      "field": "messages"
+    }]
+  }]
+}
+```
+</td>
+<td>
+    
+<image src="https://scontent.fhre1-1.fna.fbcdn.net/v/t39.8562-6/279222632_734660030860914_6012822392536302447_n.png?_nc_cat=102&ccb=1-7&_nc_sid=6825c5&_nc_ohc=6JRg8jSurMkAX96mfPU&_nc_ht=scontent.fhre1-1.fna&oh=00_AT-ijPsejf2Ys89V08c7qqC3I8wy1ppmk5RedBKakjDe8Q&oe=628FFFB6">
+
+</td>
+</tr>
+</table>
 
 
 ### Notification Payload Processor
@@ -209,18 +251,21 @@ This is will help you identify things like the type of payload and has some gett
 let messages = processedPayload.get_messages()
 let metadata = processedPayload.get_contacts()
 let contacts = processedPayload.get_contacts()
+let status = processedPayload.get_statuses()
 ```
 
 Of the helpers are not exhaustive since this is wrapper.
 
-### Getting media links  [To be implented]
+### Getting media links 
 
-To retrive actual media links
+To retrive actual media link
 
 ```javascript
 let message = processedPayload.get_messages()[0]
-let mediaData = await  processedPayload.getMediaData(message.image.id)
+let mediaData = await messenger.get_media(message.image.id)
 ```
+
+This will return an object with a URL
 
 **NOTE:** The URL you get is only available for a 5 minutes, so you may need to download it and store it somewhere, or use it as quick as possible
 
