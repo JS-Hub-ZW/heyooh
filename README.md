@@ -19,7 +19,7 @@ Unofficial javascript wrapper to [WhatsApp Cloud API](https://developers.faceboo
 
 ## Getting started
 
-To get started with **heyoo**, you have to firstly install the libary either directly or using *pip*.
+To get started with **heyoo**, you have to firstly install the libary either directly or using *npm*.
 
 ### Installation directly
 
@@ -30,7 +30,7 @@ $ git clone https://github.com/JS-Hub-ZW/heyoojs
 $ cd heyoo
 ```
 
-### Installing from pip
+### Installing from npm
 
 ```bash
 # For Windows, Linux & Mac
