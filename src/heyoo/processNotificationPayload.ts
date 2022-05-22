@@ -30,10 +30,37 @@ class ProcessPayload{
 
     }
 
-    process_message(m:any){
-        // Detect if it has media
+    process_message(m:Message){
 
-        // If message has no type, add one
+        let possible_media = [
+            "image",
+            "video",
+            "audio",
+            "document",
+            "sticker"
+        ]
+        
+        let message_keys = Object.keys(m)
+        if (message_keys.includes("location")){
+            m.type = "location"
+        }
+
+        if (message_keys.includes("contacts")){
+            m.type = "contacts"
+        }
+        
+        if (message_keys.includes("referral")){
+            m.type = "referral"
+        }
+
+        m.has_media = false
+
+        for (const key of message_keys){
+            if (possible_media.includes(key)){
+                m.has_media = true
+                break
+            }
+        }
 
         return m
     }
