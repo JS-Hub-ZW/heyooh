@@ -1,13 +1,13 @@
 {
   "name": "heyooh",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "heyooh is a javascript port of heyoo(made in python). heyoo is a python wrapper for the Whatsapp Cloud API",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
-  "prepublish": "tsc", 
+  "prepublish": "tsc",
   "scripts": {
-    "dev": "ts-node-dev --exit-child src/index.ts",
-    "start": "ts-node src/index.ts",
+    "dev": "ts-node-dev --exit-child src/hook.ts",
+    "start": "ts-node src/hook.ts",
     "build": "tsc",
     "test": "jest"
   },
