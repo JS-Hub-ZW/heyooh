@@ -60,7 +60,7 @@ Once you're follow the above procedures, now you're ready to start hacking with 
 Here how you authenticate your application, you need to specofy two things the ```TOKEN``` and ```phone_number_id``` of your test number
 
 ```javascript
-import {Whatsapp} from heyoojs
+import WhatsApp from heyoojs
 let messenger = new WhatsApp('TOKEN',  phone_number_id='104xxxxxx')
 ```
 
