@@ -2,7 +2,7 @@
 
 # [heyoo](https://pypi.org/project/heyoo/)
 
-[![Ported in Zimbabwe🇿🇼](https://img.shields.io/badge/made%20in-tanzania-008751.svg?style=flat-square)](https://github.com/Tanzania-Developers-Community/made-in-tanzania)
+[![Ported in Zimbabwe🇿🇼](https://img.shields.io/badge/ported%20in-zimbabwe%20%F0%9F%87%BF%F0%9F%87%BC-blue)](https://github.com/JS-Hub-ZW)
 [![Downloads](https://pepy.tech/badge/heyoo)](https://pepy.tech/project/heyoo)
 [![Downloads](https://pepy.tech/badge/heyoo/month)](https://pepy.tech/project/heyoo)
 [![Downloads](https://pepy.tech/badge/heyoo/week)](https://pepy.tech/project/heyoo)
