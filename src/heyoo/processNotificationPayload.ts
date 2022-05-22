@@ -1,6 +1,6 @@
 import { Message, NotificationPayload } from "../types/event";
 
-class ProcessEvent{
+class ProcessPayload{
     data: NotificationPayload
     type: string
 
@@ -26,10 +26,14 @@ class ProcessEvent{
     getMediaLinks(id: string | number){
         // Use the media api to fetch image data 
 
+
+
     }
 
     process_message(m:any){
         // Detect if it has media
+
+        // If message has no type, add one
 
         return m
     }
@@ -62,4 +66,4 @@ class ProcessEvent{
     }
 }
 
-export default ProcessEvent
+export default ProcessPayload
