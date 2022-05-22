@@ -1,11 +1,11 @@
 <samp>
 
-# [heyoo](https://pypi.org/project/heyoo/)
+# [heyooh](https://pypi.org/project/heyoo/)
 
 [![Ported in Zimbabwe🇿🇼](https://img.shields.io/badge/ported%20in-zimbabwe%20%F0%9F%87%BF%F0%9F%87%BC-blue)](https://github.com/JS-Hub-ZW)
-![NPM](https://img.shields.io/npm/l/heyoojs)
-[![Downloads](https://img.shields.io/npm/dy/heyoojs)](https://img.shields.io/npm/dw/heyoojs)
-[![Downloads](https://img.shields.io/npm/dw/heyoojs)](https://img.shields.io/npm/dw/heyoojs)
+![NPM](https://img.shields.io/npm/l/heyhooh)
+[![Downloads](https://img.shields.io/npm/dy/heyhooh)](https://img.shields.io/npm/dw/heyooh)
+[![Downloads](https://img.shields.io/npm/dw/heyhooh)](https://img.shields.io/npm/dw/heyooh)
 
 Unofficial javascript wrapper to [WhatsApp Cloud API](https://developers.facebook.com/docs/whatsapp/cloud-api). Its the javascript port for [heyoo](https://github.com/Neurotech-HQ/heyoo)
 
@@ -19,15 +19,15 @@ Unofficial javascript wrapper to [WhatsApp Cloud API](https://developers.faceboo
 
 ## Getting started
 
-To get started with **heyoo**, you have to firstly install the libary either directly or using *npm*.
+To get started with **heyooh**, you have to firstly install the libary either directly or using *npm*.
 
 ### Installation directly
 
 Use git to clone or you can also manually download the project repository just as shown below;
 
 ```bash
-$ git clone https://github.com/JS-Hub-ZW/heyoojs
-$ cd heyoo
+$ git clone https://github.com/JS-Hub-ZW/heyooh
+$ cd heyooh
 ```
 
 ### Installing from npm
@@ -35,7 +35,7 @@ $ cd heyoo
 ```bash
 # For Windows, Linux & Mac
 
-npm install heyoojs
+npm install heyooh
 ```
 
 ## Setting up
@@ -60,7 +60,7 @@ Once you're follow the above procedures, now you're ready to start hacking with 
 Here how you authenticate your application, you need to specofy two things the ```TOKEN``` and ```phone_number_id``` of your test number
 
 ```javascript
-import WhatsApp from heyoojs
+import WhatsApp from heyhooh
 let messenger = new WhatsApp('TOKEN',  phone_number_id='104xxxxxx')
 ```
 
@@ -186,7 +186,7 @@ messenger.send_template("hello_world", "255757xxxxxx")
 
 ## Webhook
 
-Webhooks are useful incase you're wondering how to respond to incoming message send by user, but I have created a [starter webhook](https://github.com/JS-Hub-ZW/heyoojs/blob/main/hook.ts) which you can then customize it according to your own plans.
+Webhooks are useful incase you're wondering how to respond to incoming message send by user, but I have created a [starter webhook](https://github.com/JS-Hub-ZW/heyhooh/blob/main/hook.ts) which you can then customize it according to your own plans.
 
 To learn more about webhook and how to configure in your Facebook developer dashboard please [have a look here](https://developers.facebook.com/docs/whatsapp/cloud-api/guides/set-up-webhooks).
 
