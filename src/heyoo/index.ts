@@ -195,4 +195,24 @@ export default class WhatsApp{
         return r 
     }
 
+    async get_media(id: string | number){
+       let media_url = `https://graph.facebook.com/v13.0/${id}`
+
+       let r = await axios.get(media_url, {
+           headers: this.headers
+       })
+
+       return r 
+    }
+
+    async delete_media(id: string | number){
+       let media_url = `https://graph.facebook.com/v13.0/${id}`
+
+       let r = await axios.delete(media_url, {
+           headers: this.headers
+       })
+
+       return r 
+    }
+
 }
