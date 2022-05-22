@@ -1,7 +1,7 @@
 {
   "name": "heyoojs",
   "version": "1.0.0",
-  "description": "",
+  "description": "heyoojs is a javascript port of heyoo(made in python). Heyoo is a python wrapper for the Whatsapp Cloud API",
   "main": "index.js",
   "scripts": {
     "dev": "ts-node-dev --exit-child src/index.ts",
