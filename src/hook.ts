@@ -18,13 +18,11 @@ let messenger = new WhatsApp(process.env.TOKEN, "101404072591160")
 let VERIFY_TOKEN =  "30cca545-3838-48b2-80a7-9e43b1ae8ce4"
 
 
-app.get('/webhook', (req: Request, res:Response) => {
-
-    console.log("Request Method: ", req.method)
-    console.log("Request Data: ", req.method == "GET" ? req.query : req.body)
+app.get('/', (req: Request, res:Response) => {
+    console.log("Request Data: ", req.query)
 
     // Handle Verification
-    if (req.method == "GET"  && req.query["hub.verify_token"]){
+    if (req.query["hub.verify_token"]){
         let hub:any = req.query
         console.log("Hub: ", hub)
         let verify_token = req.query["hub.verify_token"]
@@ -35,26 +33,37 @@ app.get('/webhook', (req: Request, res:Response) => {
         return res.send("Invalid verification token")
     }
 
-    // Handle other notifications
-    if (req.method == "POST"){
-        let data: NotificationPayload = req.body
-        let ppayload = new ProcessPayload(data)
-
-        if (ppayload.type == "messages"){
-            let messages = ppayload.get_messages()
-
-            for (const message of messages){
-                if (message.type == "text"){
-                  let phone = message.from
-
-                  messenger.send_message("Ever seen a flying cat", phone)
-                }
-            }
-        } 
-
-    }
-
     return res.send("This is a default response")
+})
+
+app.post("/", (req: Request, res: Response) => {
+    console.log("Request Data: ", req.body)
+
+
+    // Handle other notifications
+    let data: NotificationPayload = req.body
+    let ppayload = new ProcessPayload(data)
+
+    if (ppayload.type == "messages"){
+        let messages = ppayload.get_messages()
+
+        for (const message of messages){
+            if (message.type == "text"){
+                console.log("Message Data: ", message)
+
+                // Send Message Here
+                // messenger.send_message("Yeah I saw it", message.from)
+                //         .then(console.log)
+                //         .catch(console.log)
+             
+
+            }
+        }
+    } 
+
+    console.log("Payload Type: ", ppayload.type)
+    console.log("Payload Data: ", ppayload.data.entry[0].changes[0].value)
+    
 })
 
 app.listen(port, () => {
