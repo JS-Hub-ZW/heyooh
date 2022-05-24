@@ -67,7 +67,7 @@ let messenger = new WhatsApp('TOKEN',  phone_number_id='104xxxxxx')
 
 Once you have authenticated your app, now you can start using the above mentioned feature as shown above;
 
-## Sending Messanges
+## Sending Messages
 
 Here how to send messages;
 
