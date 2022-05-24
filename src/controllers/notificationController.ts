@@ -1,7 +1,7 @@
 
 
 import { Request, Response } from 'express'
-import ProcessPayload from '../heyoo/processNotificationPayload'
+import ProcessPayload from '../classes/processPayload'
 import { NotificationPayload } from "../types/event"
 
 
@@ -21,13 +21,42 @@ class NotificationController {
             for (const message of messages){
                 if (message.type == "text"){
                     console.log("Message Data: ", message)
-    
-                    // Send Message Here
-                    // messenger.send_message("Yeah I saw it", message.from)
-                    //         .then(console.log)
-                    //         .catch(console.log)
-                 
-    
+                    return res.json(message)
+                }
+
+                else if (message.type == "image"){
+                    console.log("Image Message Data: ", message)
+                    return res.json(message)
+                }
+
+                else if (message.type == "sticker"){
+                    console.log("Sticker Message Data: ", message)
+                    return res.json(message)
+                }
+
+                else if (message.type == "video"){
+                    console.log("Video Message Data: ", message)
+                    return res.json(message)
+                }
+
+                else if (message.type == "audio"){
+                    console.log("Audio Message Data: ", message)
+                    return res.json(message)
+                }
+
+                else if (message.type == "document"){
+                    console.log("Document Message Data: ", message)
+                    return res.json(message)
+                }
+
+                else if (message.type == "location"){
+                    console.log("Location Message Data: ", message)
+                    return res.json(message)
+                }
+
+                else if (message.type == "contacts"){
+                    console.log("Contacts Message Data: ", message)
+                    return res.json(message)
                 }
             }
         } 
