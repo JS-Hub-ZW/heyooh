@@ -189,9 +189,9 @@ messenger.send_template("hello_world", "255757xxxxxx")
 
 Webhooks are useful incase you're wondering how to respond to incoming message send by user, but I have created a [starter webhook](https://github.com/JS-Hub-ZW/heyooh/blob/main/src/hook.ts) which you can then customize it according to your own plans.
 
-In the meantime I have added `notificationController` to handle notifications and `verificationController` to handle verifications. Of course you are free to make your own 😊
-
 To learn more about webhook and how to configure in your Facebook developer dashboard please [have a look here](https://developers.facebook.com/docs/whatsapp/cloud-api/guides/set-up-webhooks).
+
+
 
 ### Notification Payload Structure
 
@@ -238,25 +238,42 @@ This is the structure of the notifications that you will recieve from Whatsapp w
 </table>
 
 
-### Notification Payload Processor
 
-Given notification data you can process it like this:
-
-```javascript
-let data = req.body
-let processedPayload = new ProcessNotificationPayload(data)
-```
-
-This is will help you identify things like the type of payload and has some getter functions for simplifying your work:
+### Recieving notifications
+To receive notifications such as customer messages, alerts and other callbacks from WhatsApp
 
 ```javascript
-let messages = processedPayload.get_messages()
-let metadata = processedPayload.get_contacts()
-let contacts = processedPayload.get_contacts()
-let status = processedPayload.get_statuses()
+import Server from './classes/server'
+import 'dotenv/config'
+
+let notificationServer = new Server(
+    process.env.LISTEN_PORT,
+    process.env.VERIFY_TOKEN
+)
+
+let app = notificationsServer.start(async (rawData ,processedPayload) => {
+  // Do your stuff here
+  let messages = processedPayload.get_messages()
+  let metadata = processedPayload.get_contacts()
+  let contacts = processedPayload.get_contacts()
+  let status = processedPayload.get_statuses()
+
+  // Do other stuff here
+})
 ```
 
-Of the helpers are not exhaustive since this is wrapper.
+`rawData` -> This is raw data straight from WhatsApp
+`processedPayload` -> This is an object of `ProcessPayload` it gives access to the raw_data plus helper methods
+
+**Note:** Beginners should work more with processed since it saves you time and minimizes errors
+
+**Tip:** You can refactor it to look more presentable
+
+```javascript
+import handleNotifications from 'path/to/file'
+
+let app = notificationServer.start(handleNotifications)
+```
 
 ### Getting media links 
 
@@ -266,8 +283,6 @@ To retrive actual media link
 let message = processedPayload.get_messages()[0]
 let mediaData = await messenger.get_media(message.image.id)
 ```
-
-This will return an object with a URL
 
 **NOTE:** The URL you get is only available for a 5 minutes, so you may need to download it and store it somewhere, or use it as quick as possible
 
