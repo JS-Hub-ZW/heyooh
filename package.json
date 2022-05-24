@@ -1,6 +1,6 @@
 {
   "name": "heyooh",
-  "version": "1.2.0",
+  "version": "1.1.0",
   "description": "heyooh is a javascript port of heyoo(made in python). heyoo is a python wrapper for the Whatsapp Cloud API",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
