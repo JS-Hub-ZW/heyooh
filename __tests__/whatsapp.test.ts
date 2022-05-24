@@ -1,4 +1,4 @@
-import WhatsApp from '../src/heyoo'
+import WhatsApp from '../src/classes/whatsapp'
 import 'dotenv/config'
 
 let messenger = new WhatsApp(process.env.TOKEN, process.env.PHONE_NUMBER_ID)
@@ -18,7 +18,7 @@ describe("Test Messages", () => {
         expect(resp.status).toBe(200);
         expect(resp.statusText).toBe('OK');
         }catch(e){
-            console.log(e)
+            // console.log(e)
         }
       });
 
@@ -32,7 +32,7 @@ describe("Test Messages", () => {
         expect(resp.status).toBe(200);
         expect(resp.statusText).toBe('OK');
         }catch(e){
-            console.log(e)
+            // console.log(e)
         }
       });
 
@@ -50,7 +50,7 @@ describe("Test Media", () => {
         expect(resp.status).toBe(200);
         expect(resp.statusText).toBe('OK');
         }catch(e){
-            console.log(e)
+            // console.log(e)
         }
       });
     
@@ -65,7 +65,7 @@ describe("Test Media", () => {
         expect(resp.status).toBe(200);
         expect(resp.statusText).toBe('OK');
         }catch(e){
-            console.log(e)
+            // console.log(e)
         }
       });
     
@@ -80,7 +80,7 @@ describe("Test Media", () => {
         expect(resp.status).toBe(200);
         expect(resp.statusText).toBe('OK');
         }catch(e){
-            console.log(e)
+            // console.log(e)
         }
       });
     
@@ -95,7 +95,7 @@ describe("Test Media", () => {
         expect(resp.status).toBe(200);
         expect(resp.statusText).toBe('OK');
         }catch(e){
-            console.log(e)
+            // console.log(e)
         }
       });
   }) 
@@ -116,7 +116,7 @@ describe("Test Location", () => {
         expect(resp.status).toBe(200);
         expect(resp.statusText).toBe('OK');
         }catch(e){
-            console.log(e)
+            // console.log(e)
         }
       });
     
@@ -158,7 +158,7 @@ describe("Test buttons", () => {
         expect(resp.status).toBe(200);
         expect(resp.statusText).toBe('OK');
         }catch(e){
-            console.log(e)
+            // console.log(e)
         }
       });
 })
