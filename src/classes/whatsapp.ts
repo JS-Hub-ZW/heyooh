@@ -175,10 +175,10 @@ export default class WhatsApp{
         // TODO: Investigate
         return {
             "type": "list",
-            "header": {"type": "text", "text": button.get("header")},
-            "body": {"text": button.get("body")},
-            "footer": {"text": button.get("footer")},
-            "action": button.get("action"),
+            "header": {"type": "text", "text": button["header"]},
+            "body": {"text": button["body"]},
+            "footer": {"text": button["footer"]},
+            "action": button["action"],
         }
     }
 
