@@ -5,8 +5,8 @@
 [![Ported in Zimbabwe🇿🇼](https://img.shields.io/badge/ported%20in-zimbabwe%20%F0%9F%87%BF%F0%9F%87%BC-blue)](https://github.com/JS-Hub-ZW)
 ![NPM](https://img.shields.io/npm/l/heyooh)
 ![npm](https://img.shields.io/npm/v/heyooh)
-[![Downloads](https://img.shields.io/npm/dy/heyhooh)](https://img.shields.io/npm/dw/heyooh)
-[![Downloads](https://img.shields.io/npm/dw/heyhooh)](https://img.shields.io/npm/dw/heyooh)
+![npm](https://img.shields.io/npm/dw/heyooh)
+
 
 Unofficial javascript wrapper to [WhatsApp Cloud API](https://developers.facebook.com/docs/whatsapp/cloud-api). Its the javascript port for [heyoo](https://github.com/Neurotech-HQ/heyoo)
 
@@ -61,7 +61,7 @@ Once you're follow the above procedures, now you're ready to start hacking with 
 Here how you authenticate your application, you need to specofy two things the ```TOKEN``` and ```phone_number_id``` of your test number
 
 ```javascript
-import WhatsApp from heyhooh
+import {WhatsApp} from 'heyooh'
 let messenger = new WhatsApp('TOKEN',  phone_number_id='104xxxxxx')
 ```
 
@@ -188,6 +188,8 @@ messenger.send_template("hello_world", "255757xxxxxx")
 ## Webhook
 
 Webhooks are useful incase you're wondering how to respond to incoming message send by user, but I have created a [starter webhook](https://github.com/JS-Hub-ZW/heyooh/blob/main/src/hook.ts) which you can then customize it according to your own plans.
+
+In the meantime I have added `notificationController` to handle notifications and `verificationController` to handle verifications. Of course you are free to make your own 😊
 
 To learn more about webhook and how to configure in your Facebook developer dashboard please [have a look here](https://developers.facebook.com/docs/whatsapp/cloud-api/guides/set-up-webhooks).
 
