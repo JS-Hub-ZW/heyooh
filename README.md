@@ -58,7 +58,7 @@ Once you're follow the above procedures, now you're ready to start hacking with 
 
 ## Authentication
 
-Here how you authenticate your application, you need to specofy two things the ```TOKEN``` and ```phone_number_id``` of your test number
+Here how you authenticate your application, you need to specify two things the ```TOKEN``` and ```phone_number_id``` of your test number
 
 ```javascript
 import {WhatsApp} from 'heyooh'
