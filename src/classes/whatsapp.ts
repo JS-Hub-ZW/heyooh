@@ -35,12 +35,17 @@ export default class WhatsApp{
         return r 
     }
 
-    async send_template(template:any, recipient_id: string, lang:string ="en_US"){
+    async send_template(template:any, recipient_id: string, components: any[] = [], lang:string ="en_US"){
         let data = {
             "messaging_product": "whatsapp",
             "to": recipient_id,
             "type": "template",
-            "template": {"name": template, "language": {"code": lang}},
+            "template": {
+                "name": template, 
+                "language": {"code": lang},
+                "components": [
+                    ...components
+                ]},
         }
         let  r = await axios.post(this.url, data, {
              headers: this.headers

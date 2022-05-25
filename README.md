@@ -185,6 +185,19 @@ Here how to send a pre-approved template message;
 messenger.send_template("hello_world", "255757xxxxxx")
 ```
 
+## Sending a Template Messages with Components
+You can now specify components like this
+
+```javascript
+let components = [ 
+  // Your components here
+]
+
+messenger.send_template("hello_world", "255757xxxxxx", components)
+```
+
+For moreabout components: https://developers.facebook.com/docs/whatsapp/cloud-api/guides/send-message-templates
+
 ## Webhook
 
 Webhooks are useful incase you're wondering how to respond to incoming message send by user, but I have created a [starter webhook](https://github.com/JS-Hub-ZW/heyooh/blob/main/src/hook.ts) which you can then customize it according to your own plans.
